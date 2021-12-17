@@ -9,7 +9,7 @@ class ProjectsController < ApplicationController
     if project.save
       redirect_to root_path, success: 'Project Created!'
     else
-      redirect_to new_project_path, alert: "#{project.errors.full_messages}. Please try again."
+      redirect_to new_project_path, alert: format_errors(project)
     end
   end
 
