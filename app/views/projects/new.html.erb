@@ -1,0 +1,14 @@
+<h1>New Project</h1>
+
+<%= form_with model: @project do |f| %>
+  <div class="form-floating mb-3">
+    <%= f.text_field :title, class: "form-control", id: "floatingInput1", placeholder: 'Summary' %>
+    <%= f.label 'Title', for: "floatingInput1" %>
+  </div>
+  <div class="form-floating mb-3">
+    <%= f.text_field :summary, class: "form-control", id: "floatingInput2", placeholder: 'Summary' %>
+    <%= f.label 'Summary', for: "floatingInput2" %>
+  </div>
+
+  <%= f.submit class: 'btn btn-outline-success btn-small' %>
+<% end %>
