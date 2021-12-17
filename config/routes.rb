@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get 'login', to: 'sessions#new'
   post 'login', to: 'sessions#create'
 
-  get '/', to: 'sessions#welcome'
+  get '/welcome', to: 'sessions#welcome'
   get 'authorized', to: 'sessions#page_requires_login'
   # Defines the root path route ("/")
   # root "articles#index"

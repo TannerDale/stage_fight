@@ -6,9 +6,17 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.create!(user_params)
-    session[:user_id] = @user.id
-    redirect_to '/welcome'
+    @user = User.new(user_params)
+    @user.email.downcase!
+
+    if @user.save
+      flash[:success] = 'Account created Successfully!'
+      session[:user_id] = @user.id
+      redirect_to '/welcome'
+    else
+      flash.now.alert = 'Couldn/t create account. Please use a valid email or password.'
+      render :new
+    end
   end
 
   private
