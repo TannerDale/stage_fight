@@ -24,7 +24,7 @@ jobs:
           cp config/database.yml.github-actions config/database.yml
           bundle exec rake db:create
           bundle exec rake db:schema:load
-          rake assests:precompile
+          bundle exec rake assests:precompile
         env:
           RAILS_ENV: test
           POSTGRES_USER: postgres
