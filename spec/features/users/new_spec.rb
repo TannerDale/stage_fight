@@ -33,7 +33,6 @@ describe 'Users New Page' do
       click_button 'Create User'
 
       expect(current_path).to eq(new_users_path)
-      save_and_open_page
       expect(User.count).to eq(0)
     end
 
