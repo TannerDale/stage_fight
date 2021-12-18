@@ -15,8 +15,7 @@ class UsersController < ApplicationController
 
       redirect_to dashboard_path, success: 'Account created successfully!'
     else
-      flash.now.alert = format_errors(user)
-      render :new
+      redirect_to new_users_path, alert: format_errors(user)
     end
   end
 
