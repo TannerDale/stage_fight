@@ -1,1 +1,41 @@
-<%= render 'shared/user', @user %>
+<h1>Sign Up</h1>
+
+<%= form_with model: @user, local: true do |f| %>
+  <div class="form-floating mb-3">
+    <%= f.text_field :username, class: "form-control", id: "floatingInput1", placeholder: 'Username' %>
+    <%= f.label 'Username', for: "floatingInput1" %>
+  </div>
+
+  <div class="form-floating mb-3">
+    <%= f.text_field :email, class: "form-control", id: "floatingInput1", placeholder: 'Email' %>
+    <%= f.label 'Email', for: "floatingInput1" %>
+  </div>
+
+  <div class="form-floating mb-3">
+    <%= f.text_field :first_name, class: "form-control", id: "floatingInput1", placeholder: 'First Name' %>
+    <%= f.label 'First Name', for: "floatingInput1" %>
+  </div>
+
+  <div class="form-floating mb-3">
+    <%= f.text_field :last_name, class: "form-control", id: "floatingInput1", placeholder: 'Last Name' %>
+    <%= f.label 'Last Name', for: "floatingInput1" %>
+  </div>
+
+  <div class="form-floating mb-3">
+    <%= f.password_field :password, class: "form-control", id: "floatingInput1", placeholder: 'Password' %>
+    <%= f.label 'Password', for: "floatingInput1" %>
+  </div>
+
+  <div class="form-floating mb-3">
+    <%= f.password_field :password_confirmation, class: "form-control", id: "floatingInput1", placeholder: 'Password' %>
+    <%= f.label 'Password', for: "floatingInput1" %>
+  </div>
+
+  <div class="form-floating mb-3">
+    <%= f.text_field :bio, class: "form-control", id: "floatingInput1", placeholder: 'Biography' %>
+    <%= f.label 'Biography', for: "floatingInput1" %>
+  </div>
+
+  <%= f.submit, class: 'btn btn-outline-success btn-small' %>
+<% end %>
+
