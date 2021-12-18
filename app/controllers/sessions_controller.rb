@@ -1,14 +1,13 @@
 class SessionsController < ApplicationController
-  skip_before_action :authorized, only: %i[new create welcome]
+  skip_before_action :authorized
 
-  def new
-  end
+  def new; end
 
   def create
-    @user = User.find_by(username: params[:username])
+    user = User.find_by(username: params[:username])
 
-    if @user && @user.authenticate(params[:password])
-      sessions[:user_id] = @user.id
+    if user.authenticate(params[:password])
+      sessions[:user_id] = user.id
       redirect_to welcome_path, notice: 'Successfully logged in!'
     else
       redirect_to login_path, alert: 'Incorrect email or password, try again.'
