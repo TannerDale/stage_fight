@@ -1,6 +1,4 @@
 class SessionsController < ApplicationController
-  skip_before_action :authorized
-
   def new; end
 
   def create
