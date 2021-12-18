@@ -11,10 +11,9 @@ class UsersController < ApplicationController
     user = User.new(user_params)
 
     if user.save
-      flash[:success] = 'Account created successfully!'
       session[:user_id] = user.id
 
-      redirect_to dashboard_path
+      redirect_to dashboard_path, success: 'Account created successfully!'
     else
       flash.now.alert = format_errors(user)
       render :new
