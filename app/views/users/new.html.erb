@@ -1,5 +1,14 @@
 <h1>Sign Up</h1>
 
+<% unless @user.errors.empty? %>
+  <% @user.errors.each do |e| %>
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      <%= e.full_message %>
+    </div>
+  <% end %>
+<% end %>
+
 <%= form_with model: @user, local: true do |f| %>
   <div class="form-floating mb-3">
     <%= f.text_field :username, class: "form-control", id: "floatingInput1", placeholder: 'Username' %>
