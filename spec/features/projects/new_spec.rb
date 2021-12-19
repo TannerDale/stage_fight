@@ -19,8 +19,9 @@ describe 'Projects New Page' do
     it 'rejects missing title and summary' do
       click_button 'Create Project'
 
-      expect(current_path).to eq new_project_path
-      expect(page).to have_content "Title can't be blank and Summary can't be blank. Please try again."
+      expect(current_path).to eq projects_path
+      expect(page).to have_content "Title can't be blank"
+      expect(page).to have_content "Summary can't be blank"
       expect(Project.count).to eq(0)
     end
 
@@ -28,8 +29,8 @@ describe 'Projects New Page' do
       fill_in 'project[summary]', with: 'World'
       click_button 'Create Project'
 
-      expect(current_path).to eq new_project_path
-      expect(page).to have_content "Title can't be blank. Please try again."
+      expect(current_path).to eq projects_path
+      expect(page).to have_content "Title can't be blank"
       expect(Project.count).to eq(0)
     end
 
@@ -37,8 +38,8 @@ describe 'Projects New Page' do
       fill_in 'project[title]', with: 'World'
       click_button 'Create Project'
 
-      expect(current_path).to eq new_project_path
-      expect(page).to have_content "Summary can't be blank. Please try again."
+      expect(current_path).to eq projects_path
+      expect(page).to have_content "Summary can't be blank"
       expect(Project.count).to eq(0)
     end
   end
