@@ -1,8 +1,12 @@
 <h1>Sessions#new</h1>
-<%= form_with url: login_path, local: true do |f| %>
+<%= form_with url: login_path do |f| %>
   <%= f.label :email %>
   <%= f.text_field :email %>
   <%= f.label :password %>
   <%= f.text_field :password %>
+  <div class="form-floating mb-3">
+    <%= f.text_field :username, class: "form-control", id: "floatingInput1", placeholder: 'Username' %>
+    <%= f.label 'Username', for: "floatingInput1" %>
+  </div>
   <%= f.submit 'Log In' %>
 <% end %>
