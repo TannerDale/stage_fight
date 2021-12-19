@@ -32,7 +32,7 @@ describe 'Users New Page' do
 
       click_button 'Create User'
 
-      expect(current_path).to eq(new_users_path)
+      expect(current_path).to eq(users_path)
       expect(User.count).to eq(0)
     end
 
@@ -46,7 +46,7 @@ describe 'Users New Page' do
 
       click_button 'Create User'
 
-      expect(current_path).to eq(new_users_path)
+      expect(current_path).to eq(users_path)
       expect(User.count).to eq(0)
     end
 
@@ -60,7 +60,7 @@ describe 'Users New Page' do
 
       click_button 'Create User'
 
-      expect(current_path).to eq(new_users_path)
+      expect(current_path).to eq(users_path)
       expect(User.count).to eq(0)
     end
 
@@ -74,7 +74,7 @@ describe 'Users New Page' do
 
       click_button 'Create User'
 
-      expect(current_path).to eq(new_users_path)
+      expect(current_path).to eq(users_path)
       expect(User.count).to eq(0)
     end
 
@@ -88,7 +88,7 @@ describe 'Users New Page' do
 
       click_button 'Create User'
 
-      expect(current_path).to eq(new_users_path)
+      expect(current_path).to eq(users_path)
       expect(User.count).to eq(0)
     end
 
@@ -102,7 +102,7 @@ describe 'Users New Page' do
 
       click_button 'Create User'
 
-      expect(current_path).to eq(new_users_path)
+      expect(current_path).to eq(users_path)
       expect(User.count).to eq(0)
     end
 
@@ -117,7 +117,7 @@ describe 'Users New Page' do
 
       click_button 'Create User'
 
-      expect(current_path).to eq(new_users_path)
+      expect(current_path).to eq(users_path)
       expect(User.count).to eq(0)
     end
   end
