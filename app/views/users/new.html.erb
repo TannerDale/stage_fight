@@ -9,7 +9,7 @@
   <% end %>
 <% end %>
 
-<%= form_with model: @user, local: true do |f| %>
+<%= form_with model: @user do |f| %>
   <div class="form-floating mb-3">
     <%= f.text_field :username, class: "form-control", id: "floatingInput1", placeholder: 'Username' %>
     <%= f.label 'Username', for: "floatingInput1" %>
@@ -45,5 +45,5 @@
     <%= f.label 'Biography', for: "floatingInput1" %>
   </div>
 
-  <%= f.submit class: 'btn btn-outline-success btn-small' %>
+  <%= f.submit class: 'btn btn-outline-success btn-sm' %>
 <% end %>
