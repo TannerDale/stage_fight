@@ -7,7 +7,7 @@ class ProjectsController < ApplicationController
     @project = Project.new(project_params)
 
     if @project.save
-      redirect_to root_path, success: 'Project Created!'
+      redirect_to dashboard_path, success: 'Project Created!'
     else
       render :new, status: 422
     end

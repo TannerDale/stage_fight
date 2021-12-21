@@ -6,7 +6,8 @@ class SessionsController < ApplicationController
 
     if user&.authenticate(params[:password])
       sessions[:user_id] = user.id
-      redirect_to welcome_path, notice: 'Successfully logged in!'
+
+      redirect_to dashboard_path, notice: 'Successfully logged in!'
     else
       redirect_to login_path, alert: 'Incorrect email or password, try again.'
     end
@@ -14,6 +15,6 @@ class SessionsController < ApplicationController
 
   def destroy
     session.delete(:user_id)
-    redirect_to login_path, success: 'Logged out!'
+    redirect_to root_path, success: 'Logged out!'
   end
 end

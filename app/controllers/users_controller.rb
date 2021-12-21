@@ -13,7 +13,7 @@ class UsersController < ApplicationController
 
       redirect_to dashboard_path, success: 'Account created successfully!'
     else
-      render :new
+      render :new, status: 422
     end
   end
 
