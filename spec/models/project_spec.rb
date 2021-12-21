@@ -5,4 +5,9 @@ describe Project do
     it { should validate_presence_of :title }
     it { should validate_presence_of :summary }
   end
+
+  describe 'relationships' do
+    it { should have_many :casts }
+    it { should have_many(:users).through :casts }
+  end
 end

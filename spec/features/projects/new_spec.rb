@@ -9,7 +9,7 @@ describe 'Projects New Page' do
       fill_in 'project[summary]', with: 'World'
       click_button 'Create Project'
 
-      expect(current_path).to eq root_path
+      expect(current_path).to eq dashboard_path
       expect(page).to have_content 'Project Created'
       expect(Project.count).to eq(1)
     end
