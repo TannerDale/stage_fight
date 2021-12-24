@@ -8,6 +8,6 @@ class User < ApplicationRecord
   validates :password, presence: true
   validates :password_confirmation, presence: true, on: :create
 
-  has_many :casts
+  has_many :casts, dependent: :destroy
   has_many :projects, through: :casts
 end

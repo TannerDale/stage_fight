@@ -20,7 +20,7 @@ end
   )
 end
 
-[1, 2, 3, 4, 5].each do |num|
+(1..20).each do |num|
   Project.create!(
     title: "Project #{num}",
     summary: "Summary for project #{num}"
