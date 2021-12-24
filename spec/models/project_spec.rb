@@ -7,7 +7,7 @@ describe Project do
   end
 
   describe 'relationships' do
-    it { should have_many :casts }
+    it { should have_many(:casts).dependent :destroy }
     it { should have_many(:users).through :casts }
   end
 end
