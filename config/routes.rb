@@ -7,5 +7,5 @@ Rails.application.routes.draw do
   get :login, to: 'sessions#new'
   post :login, to: 'sessions#create'
 
-  resources :projects, only: %i[new create]
+  resources :projects, only: %i[index new create]
 end
