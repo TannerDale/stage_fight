@@ -19,7 +19,7 @@ describe Project do
       projects.each_with_index do |project, i|
         create_list :cast, 3, project_id: project.id, user_id: user.id
 
-        create :cast, project_id: project.id if i == 0
+        create :cast, project_id: project.id, user_id: nil if i == 0
       end
     end
 

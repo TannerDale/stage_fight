@@ -6,5 +6,7 @@ class Project < ApplicationRecord
   has_many :users, through: :casts
 
   scope :with_open_positions, -> {
+    joins(:casts)
+      .where('casts.user_id IS null')
   }
 end
