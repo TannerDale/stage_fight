@@ -20,15 +20,28 @@ end
   )
 end
 
-(1..20).each do |num|
+projects = (1..20).map do |num|
   Project.create!(
     title: "Project #{num}",
     summary: "Summary for project #{num}"
   )
 end
 
-Cast.create!(
-  description: 'hello',
-  project_id: 1,
-  position: 1
-)
+projects.each do |proj|
+  2.times do
+    Cast.create!(
+      position: (0..6).to_a.sample,
+      description: 'Role of the year',
+      project_id: proj.id,
+      user_id: [User.first.id, User.last.id].sample
+    )
+  end
+end
+
+projects[15..].each do |proj|
+  Cast.create!(
+    position: (0..6).to_a.sample,
+    description: 'Role of the year',
+    project_id: proj.id,
+  )
+end
