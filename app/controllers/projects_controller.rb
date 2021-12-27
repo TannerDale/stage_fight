@@ -1,4 +1,8 @@
 class ProjectsController < ApplicationController
+  def index
+    @projects = Project.with_open_positions
+  end
+
   def new
     @project = Project.new
   end

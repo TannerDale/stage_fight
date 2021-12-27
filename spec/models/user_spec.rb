@@ -18,7 +18,7 @@ describe User do
   end
 
   describe 'relationships' do
-    it { should have_many :casts }
+    it { should have_many(:casts).dependent :destroy }
     it { should have_many(:projects).through :casts }
   end
 end

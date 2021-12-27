@@ -1,0 +1,10 @@
+<h1>Discover Projects</h1>
+<br/>
+
+<div>
+  <% @projects.each do |project| %>
+    <h3><%= project.title %></h3>
+    <p><%= project.summary %></p>
+    <br/>
+  <% end %>
+</div>

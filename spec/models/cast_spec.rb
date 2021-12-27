@@ -9,4 +9,10 @@ describe Cast do
     it { should belong_to(:user).optional true }
     it { should belong_to :project }
   end
+
+  describe 'enum' do
+    let(:values) { %w[owner actor actress director producer writer editor camera lights set costume]}
+
+    it { should define_enum_for(:position).with_values(values) }
+  end
 end
